@@ -146,7 +146,7 @@ func getDockerBuildCommand(build dockerBuild) (string, []string) {
 
 	args = append(args, "--tag", build.Image, ".")
 
-	command := "docker"
+	command := "docker buildx build --allow security.insecure ."
 
 	return command, args
 }
